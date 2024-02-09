@@ -43,7 +43,7 @@ function displayMealList() {
                     <div class="card-body">
                         <h5 class="card-title ">${element.strMeal}</h5>
                         <div class="d-flex justify-content-between mt-5 detailPart">
-                            <button type="button" class="btn btn-warning recipe" onclick="displayMealDetails(${element.idMeal})">Recipe</button>
+                            <button type="button" class="btn btn-warning recipe" onclick="displayMealDetails(${element.idMeal})">Details</button>
                             <button id="main${element.idMeal}" class="btn btn-outline-light active" onclick="addRemoveToFavList(${element.idMeal})" style="border-radius:50%"><i class="fa-solid fa-heart favoriteMealIndication"></i></button>
                         </div>
                     </div>
@@ -56,7 +56,7 @@ function displayMealList() {
                     <div class="card-body">
                         <h5 class="card-title">${element.strMeal}</h5>
                         <div class="d-flex justify-content-between mt-5 detailPart">
-                            <button type="button" class="btn btn-warning recipe" onclick="displayMealDetails(${element.idMeal})">Recipe</button>
+                            <button type="button" class="btn btn-warning recipe" onclick="displayMealDetails(${element.idMeal})">Details</button>
                             <button id="main${element.idMeal}" class="btn btn-outline-light" onclick="addRemoveToFavList(${element.idMeal})" style="border-radius:50%"><i class="fa-solid fa-heart"></i></button>
                         </div>
                     </div>
@@ -157,7 +157,7 @@ async function displayFavMealList() {
                     <div class="card-body">
                         <h5 class="card-title">${data.meals[0].strMeal}</h5>
                         <div class="d-flex justify-content-between mt-5 detailPart">
-                            <button type="button" class="btn btn-warning recipe" onclick="displayFavMealDetails(${data.meals[0].idMeal})">Recipe</button>
+                            <button type="button" class="btn btn-warning recipe" onclick="displayFavMealDetails(${data.meals[0].idMeal})">Details</button>
                             <button id="main${data.meals[0].idMeal}" class="btn btn-outline-light" onclick="addRemoveToFavList(${data.meals[0].idMeal})" style="border-radius:50%"><i class="fa fa-trash deleteFavorite" aria-hidden="true"></i>
                             </button>
                         </div>
