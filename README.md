@@ -71,6 +71,6 @@ Remove from favourites button: Each meal should have remove from favourites butt
         
 
 ### PREVIEW OF THE PROJECT ON HOISTED URL
-    https://jincygit.github.io
+    https://jincygit.github.io/meal_app_test/
 
     
