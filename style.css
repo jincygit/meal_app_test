@@ -220,3 +220,6 @@ i {
 .recipe{
     min-width: 11%;
 }
+.activeTab{
+    text-decoration: underline;
+}

@@ -22,14 +22,19 @@
       <a class="navbar-brand" href="index.html">
         <img src="assets/img/Tasty-food-logo.png" alt="Bootstrap" width="140" height="110">
       </a>
-      <a class="nav-link heading" id="fav" href="index.html" >Home</a>
+      <a class="nav-link heading activeTab" id="fav" href="index.html" >Home</a>
       <a class="nav-link heading" id="fav" href="favorite.html" onclick="displayFavMealList()">Favorites</a>
       </div>
 
   </nav>
   <!--HEADER ENDS-->
-  <div id="snackbar"></div>
 
+
+  <!--TOAST MSG SECTION STARTS-->
+  <div id="snackbar"></div>
+  <!--TOAST MSG SECTION ENDS-->
+
+  
   <!--INPUT SECTION WHERE SEARCH IS DONE STARTS -->
   <div class="container text-center mt-5">
     <input type="text" id="searchInput" class="searchbox" placeholder="Search Meal.." onkeyup="displayMealList()" />

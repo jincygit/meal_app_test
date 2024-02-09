@@ -213,6 +213,7 @@ async function displayFavMealDetails(id) {
 
 // ADDING AND REMOVAL OF THE FAVORITES
 function addRemoveToFavList(id) {
+    console.log(id);
     let favListArr=JSON.parse(localStorage.getItem("favouritesList"));
     let containFlag=false;
     for (let index = 0; index < favListArr.length; index++) {
