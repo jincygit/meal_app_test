@@ -26,7 +26,7 @@ Utilizing HTML, CSS, and Javascript, this website is straightforward. The user-s
 
 1. Clone the repo
    ```sh
-   https://github.com/jincygit/alarm_clock_test.git
+   https://github.com/jincygit/meal_app_test.git
    ```
    ```
 
