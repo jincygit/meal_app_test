@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@300&display=swap');
+
+
+* {
+  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: #19ed28;
+}
+
+#fav {
+    color: #ffffff;
+}
+
+.searchbox {
+    margin: 0;
+    width: 40%;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    padding: .8rem 2rem .8rem 1rem;
+    outline: none;
+    border: none;
+    background-color: #f7d913;
+    color: #000000;
+}
+
+.searchButton {
+    text-align: center;
+    outline: none;
+    border: none;
+    background-color: #23212E;
+    margin: 0;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: .8rem 1rem;
+    margin-left: -1.9%;
+}
+
+i {
+    color: #939794;
+}
+#searchIcon{
+    color: #19ed28;
+}
+.favoriteMealIndication{
+    color: #f10f0f;
+}
+.deleteFavorite{
+    color: #f10f0f;
+}
+/* .image-info{
+    height: 40%
+}
+
+.image-info img{
+    height: 100%;
+} */
+
+.recipeList {
+    margin: auto;
+}
+
+.card {
+    background-color: #137633;
+    border-radius: 20px;
+    color: #ffffff
+}
+
+.btn-warning {
+    background: rgb(241, 161, 49);
+    /* background: linear-gradient(90deg, rgba(241, 161, 49, 1) 1%, rgba(244, 149, 44, 1) 30%, rgba(250, 197, 63, 1) 66%); */
+    background: linear-gradient(90deg, rgb(114 219 50) 1%, rgb(84 139 74) 30%, rgb(114 219 50) 66%);
+    border-radius: 20px;
+    padding: 0.4rem 2rem;
+    color: white!important;
+}
+.white{
+    color: white;
+}
+.food-wid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#heading2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    background: #e50141;
+    
+    background: linear-gradient(90deg, rgb(114 219 50) 1%, rgb(84 139 74) 30%, rgb(114 219 50) 66%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.heading{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#recipe-intro{
+    font-weight: lighter!important;
+    word-spacing: 0.3rem;
+    
+}
+
+  .footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    margin-top: auto; /* Push the footer to the bottom of the page */
+  }
+  
+  .footer .social-links {
+    background-color: #343a40; /* Set background color to match footer */
+    display: inline-block; /* Ensure anchor tags are displayed inline */
+    padding: 5px; /* Optional padding around icons */
+  }
+  
+  .footer .social-links a {
+    display: inline-block; /* Ensure the anchor tags are displayed inline */
+    border-radius: 50%; /* Make the anchor tags round */
+    overflow: hidden; /* Hide any content that overflows from the round shape */
+    width: 30px; /* Adjust the width of the icons */
+    height: 30px; /* Adjust the height of the icons */
+    margin-right: 10px; /* Optional margin between icons */
+    background-color: #343a40; /* Set background color for the circular shape */
+    text-align: center; /* Center the icon horizontally */
+    line-height: 30px; /* Center the icon vertically */
+  }
+  
+  .footer img {
+    max-width: 100%; /* Ensure the image doesn't exceed the size of its container */
+    max-height: 100%; /* Ensure the image doesn't exceed the size of its container */
+    vertical-align: inherit;
+  }
+/* toastmsg styles */
+#snackbar {
+    visibility: hidden;
+    width: 32%;
+    margin-left: -125px;
+    /* height: 11%; */
+    max-height: 18%;
+    min-height: 18%;
+    margin-left: -125px;
+    background-color: #f1fd0d;
+    color: #000;
+    text-align: center;
+    border-radius: 45px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 80%;
+    /* bottom: 30px; */
+    font-size: 17px;
+    top: 7%;
+    /* border-width: 10px; */
+    /* border-color: black; */
+    border: 5px solid #0a0a0a;
+  }
+  
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  /* responsivness */
+  .recipe-button,
+  .favorite-button {
+      flex: 1; /* Equal distribution of space */
+      margin: 0 5px; /* Add some spacing between buttons */
+      min-width: 120px; /* Set minimum width to ensure buttons are clickable */
+  }
+  
+  @media screen and (max-width: 100px) {
+      .recipe-button,
+      .favorite-button {
+          min-width: unset; /* Reset minimum width */
+          width: 100%; /* Make buttons occupy full width */
+          margin: 5px 0; /* Adjust margin for better spacing */
+          font-size: 0.8rem; /* Adjust font size for smaller screens */
+      }
+  }
+.recipe{
+    min-width: 11%;
+}
