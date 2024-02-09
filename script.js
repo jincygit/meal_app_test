@@ -24,64 +24,70 @@ function displayMealList() {
     let arr = JSON.parse(localStorage.getItem("favouritesList"));
     let url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
     let html = "";
-    let meals = fetchMealsFromApi(url, inputValue);
-    meals.then(data => {
-     
-        if (data.meals) {
-            console.log(data);
-            data.meals.forEach((element) => {
-                let isFav=false;
-                for (let index = 0; index < arr.length; index++) {
-                    if(arr[index]==element.idMeal){
-                        isFav=true;
+    if (inputValue!="")
+    {
+        let meals = fetchMealsFromApi(url, inputValue);
+        meals.then(data => {
+        
+            if (data.meals) {
+                console.log(data);
+                data.meals.forEach((element) => {
+                    let isFav=false;
+                    for (let index = 0; index < arr.length; index++) {
+                        if(arr[index]==element.idMeal){
+                            isFav=true;
+                        }
                     }
-                }
-                if (isFav) {
-                    html += `
-                <div id="card" class="card mb-3" style="width: 20rem;">
-                    <img src="${element.strMealThumb}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title ">${element.strMeal}</h5>
-                        <div class="d-flex justify-content-between mt-5 detailPart">
-                            <button type="button" class="btn btn-warning recipe" onclick="displayMealDetails(${element.idMeal})">Details</button>
-                            <button id="main${element.idMeal}" class="btn btn-outline-light active" onclick="addRemoveToFavList(${element.idMeal})" style="border-radius:50%"><i class="fa-solid fa-heart favoriteMealIndication"></i></button>
+                    if (isFav) {
+                        html += `
+                    <div id="card" class="card mb-3" style="width: 20rem;">
+                        <img src="${element.strMealThumb}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title ">${element.strMeal}</h5>
+                            <div class="d-flex justify-content-between mt-5 detailPart">
+                                <button type="button" class="btn btn-warning recipe" onclick="displayMealDetails(${element.idMeal})">Details</button>
+                                <button id="main${element.idMeal}" class="btn btn-outline-light active" onclick="addRemoveToFavList(${element.idMeal})" style="border-radius:50%"><i class="fa-solid fa-heart favoriteMealIndication"></i></button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                `;
-                } else {
-                    html += `
-                <div id="card" class="card mb-3" style="width: 20rem;">
-                    <img src="${element.strMealThumb}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">${element.strMeal}</h5>
-                        <div class="d-flex justify-content-between mt-5 detailPart">
-                            <button type="button" class="btn btn-warning recipe" onclick="displayMealDetails(${element.idMeal})">Details</button>
-                            <button id="main${element.idMeal}" class="btn btn-outline-light" onclick="addRemoveToFavList(${element.idMeal})" style="border-radius:50%"><i class="fa-solid fa-heart"></i></button>
+                    `;
+                    } else {
+                        html += `
+                    <div id="card" class="card mb-3" style="width: 20rem;">
+                        <img src="${element.strMealThumb}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">${element.strMeal}</h5>
+                            <div class="d-flex justify-content-between mt-5 detailPart">
+                                <button type="button" class="btn btn-warning recipe" onclick="displayMealDetails(${element.idMeal})">Details</button>
+                                <button id="main${element.idMeal}" class="btn btn-outline-light" onclick="addRemoveToFavList(${element.idMeal})" style="border-radius:50%"><i class="fa-solid fa-heart"></i></button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                `;
-                }  
-            });
-        } else {
-            html += `
-            <div class="page-wrap d-flex flex-row align-items-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-12 text-center" ">
-                
-                            <div class="mb-4 lead white">
-                                The meal you are looking for was not found.
+                    `;
+                    }  
+                });
+            } else {
+                html += `
+                <div class="page-wrap d-flex flex-row align-items-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 text-center" ">
+                    
+                                <div class="mb-4 lead white">
+                                    The meal you are looking for was not found.
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            `;
-        }
-        document.getElementById("recipeList").innerHTML = html;
-    });
+                `;
+            }
+            document.getElementById("recipeList").innerHTML = html;
+        });
+    }
+    else{
+        document.getElementById("recipeList").innerHTML = "";
+    }
 }
 
 
